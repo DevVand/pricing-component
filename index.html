@@ -1,0 +1,83 @@
+﻿<!Doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<title>Pricing component with toggle | Vanderlei Catione</title>
+
+</head>
+<body>
+	<div class="estrutura">
+		<h1 class="title">Our Pricing</h1>
+		
+		<nav class="toggle">
+			<p>Monthly</p>
+			<div class="checkbox">
+			<div class="ball"> </div>
+			</div>
+			<p>Annually</p>
+		</nav>
+
+		<section class="cards">
+
+			<article class="card">
+				<p>Basic</p>
+				<h2 class="monthly"><strong>$</strong>19.99</h2>
+				<h2 class="annually"><strong>$</strong>199.99</h2>
+				<p>500GB Storage</p>
+				<p>2 Users Allowed</p>
+				<p>Send up to 3gb</p>
+				<a class="button" href="">LEARN MORE</a>
+			</article>
+
+			<article class="card">
+				<p>Professional</p>
+				<h2 class="monthly"><strong>$</strong>49.99</h2>
+				<h2 class="annually"><strong>$</strong>499.99</h2>
+				<p>1TB Storage</p>
+				<p>5 Users Allowed</p>
+				<p>Send up to 10gb</p>
+				<a class="button" href="">LEARN MORE</a>
+			</article>
+			
+			<article class="card">
+				<p>Master</p>
+				<h2 class="monthly"><strong>$</strong>39.99</h2>
+				<h2 class="annually"><strong>$</strong>399.99</h2>
+				<p>2TB Storage</p>
+				<p>10 Users Allowed</p>
+				<p>Send up to 20gb</p>
+				<a class="button" href="">LEARN MORE</a>
+			</article>
+		</section>
+
+	</div>
+
+	<script>
+		const checkbox = document.querySelector(".checkbox")
+		const monthly = document.querySelectorAll(".monthly")
+		const annually = document.querySelectorAll(".annually") 
+		
+		checkbox.addEventListener("click",function(){
+			if(checkbox.classList.contains("active")){
+				checkbox.classList.remove("active")
+				for(var i = 0; i<monthly.length;i++){
+					monthly[i].classList.remove("remove")
+					annually[i].classList.remove("active")
+				}
+
+			}
+			else{
+				checkbox.classList.add("active")
+				for(var i = 0; i<monthly.length;i++){
+					monthly[i].classList.add("remove")
+					annually[i].classList.add("active")
+				}
+			}
+		})
+
+	</script>
+</body>
+</html>
